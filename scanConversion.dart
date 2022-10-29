@@ -35,3 +35,25 @@ int getY(double m, int x, double b) {
 int getX(double m, int y, double b) {
   return ((y - b) / m).floor();
 }
+
+digitalDifferentialAnalyzer(double x1,double y1,double x2,double y2){
+  double m =(y2-y1)/(x2-x1);
+ 
+  if(m<=1){
+    while(x1<=x2){
+      setPixel(x1.round(),y1.round());
+      y2=y1+m;
+      y1=y2;
+      x1++;
+    }
+  }else{
+    while(y1<=y2){
+      setPixel(x1.round(),y1.round());
+      x2=x1+(1/m);
+      x1=x2;
+      y1++;
+      
+    }
+  }
+}
+
