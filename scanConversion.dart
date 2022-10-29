@@ -57,3 +57,28 @@ digitalDifferentialAnalyzer(double x1,double y1,double x2,double y2){
   }
 }
 
+bresenhamLineAlgorithm(int x1,int y1,int x2,int y2){
+  int dx =x2-x1;
+  int dy =y2-y1;
+  int p=(2*dy)-dx;
+  int x=x1;
+  int y=y1;
+  
+  
+  
+  while(x<=x2){//dx>dy | m<=1
+    
+    setPixel(x,y);
+    x++;
+    if(p<0){
+      p=p+(2*dy);
+    }else{
+      p=p+(2*dy)-(2*dx);
+      y++;
+    }
+    
+  }
+  
+  
+}
+
