@@ -82,3 +82,21 @@ bresenhamLineAlgorithm(int x1,int y1,int x2,int y2){
   
 }
 
+bresenhamCircleAlgorithm(int cx,int cy,int r){
+  int x=cx;
+  int y=r;
+  int p =3-(2*r);
+  while(x<=y){
+    setPixel(x,y);
+    
+    if(p<0){
+      p=p+(4*x)+6;
+    }else{
+      p=p+(4*(x-y))+10;
+      y--;
+    }
+    x++;
+  }
+  
+}
+
